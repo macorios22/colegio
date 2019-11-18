@@ -1,0 +1,14 @@
+<!-- Esto es un comentario -->
+{% extends 'base.html' %}
+{% block content %}
+{% load bootstrap4 %}
+<li class="list-group-item"><h1>{{ pensum.nombre }}</h1>
+   <br>  {{ pensum.descripcion }}<br>
+    <h3>Cursos del pensum:</h3>
+   {% for cursos in pensum.cursos.all %}
+   {{cursos.nombre}} <br>
+   {% empty %}
+       <li class="list-group-item">No hay cursos</li>
+   {% endfor %}
+</li>
+{% endblock %}
